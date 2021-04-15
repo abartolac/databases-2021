@@ -1,7 +1,7 @@
 # Campus Food Delivery System
 ## ***Introduction***
 
-Hello everyone! This is a project that features enhancements to a food delivery system for college campuses. The main enhancement will be the addition of a rating system for delivery drivers and customers.
+Hello everyone! This is a project that features enhancements to a food delivery system for college campuses. The main enhancement will be the addition of a rating system for delivery drivers and customers. The rating system will be a five-star rating system in which customers can express their happiness, disappointment, etc. of their devliery experience. They will rate both the delivery driver and the restaurant. Sometimes, the delivery driver is not at fault for a bad experience, so the separation between delivery driver and restaurant rating is important. This system also allows the database to compare ratings across multiple deliveries for a specific delivery driver. If there are many negative reviews about one driver, the campus controllers can look into the negative experiences and take further action as needed. The rating system overall enhances the effectiveness of the delivery system.
 This project was created by Ashley Bartolac, Ethan Bemis, and Jai Hall.
 
 ## ***Use Case for Rating System***
