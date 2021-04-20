@@ -17,6 +17,7 @@ b.	All delivery personnel are students.
 6)	The rating system will be a five-star rating system that is required after receiving an order. It is a three-part system: rating the delivery driver, rating the restaurant, and leaving a comment. Customers will rate their experience with the delivery/delivery driver, while also rating the restaurant. The rating system will allow customers the option to type a comment about their experience as well. Each rating will be linked to only one food order. There is a minimum of zero and a maximum of one rating per order. 
 
 ## ***EERD (full database)***
+<img width="690" alt="EERD Diagram CE" src="https://user-images.githubusercontent.com/81598050/115477165-53dbf580-a211-11eb-9c58-4785f0352e07.png">
 
 ## ***MySQL Queries***
 
