@@ -21,9 +21,9 @@ b.	All delivery personnel are students.
 
 ## ***MySQL Queries***
 **Creating the driver rating table**:
+
 CREATE TABLE `Campus_Eats_Fall2020`.`driver_rating` (
-  `rating_id` INT(11) NOT NULL AUTO_INCREMENT,
-  `order_id` INT(11) NULL,
+  `driver_rating_id` INT(11) NOT NULL AUTO_INCREMENT,
   `driver_id` INT(11) NULL,
   `person_id` INT(11) NULL,
   `overall_satisfaction_rating` INT(1) NULL,
@@ -32,21 +32,40 @@ CREATE TABLE `Campus_Eats_Fall2020`.`driver_rating` (
   `comments` TEXT(100) NULL,
   PRIMARY KEY (`rating_id`),
   INDEX `driver_id_idx` (`driver_id` ASC) VISIBLE,
-  INDEX `order_id_idx` (`order_id` ASC) VISIBLE,
   CONSTRAINT `driver_id`
     FOREIGN KEY (`driver_id`)
     REFERENCES `Campus_Eats_Fall2020`.`driver` (`driver_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION;
+    
+**Adding the driver_rating attribute to the driver table:**
+
+ALTER TABLE `Campus_Eats_Fall2020`.`driver` 
+CHANGE COLUMN `rating` `driver_rating` VARCHAR(3) NULL DEFAULT NULL ;
+
+**Creating the restaurant rating table:**
+
+CREATE TABLE `Campus_Eats_Fall2020`.`restaurant_rating` (
+  `restaurant_rating_id` INT NOT NULL AUTO_INCREMENT,
+  `order_id` INT(11) NOT NULL,
+  `restaurant_id` INT(11) NOT NULL,
+  `ease_of_ordering` INT(1) NULL,
+  `food_quality` INT(1) NULL,
+  `overall_satisfaction_rating` INT(1) NULL,
+  `restaurant_rating` VARCHAR(3) NULL,
+  PRIMARY KEY (`restaurant_rating_id`),
+  INDEX `restaurant_id_idx` (`restaurant_id` ASC) VISIBLE,
+  INDEX `order_id_idx` (`order_id` ASC) VISIBLE,
+  CONSTRAINT `restaurant_id`
+    FOREIGN KEY (`restaurant_id`)
+    REFERENCES `Campus_Eats_Fall2020`.`restaurant` (`restaurant_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `order_id`
     FOREIGN KEY (`order_id`)
     REFERENCES `Campus_Eats_Fall2020`.`order` (`order_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
-    
-**Adding the driver_rating attribute to the driver table:**
-ALTER TABLE `Campus_Eats_Fall2020`.`driver` 
-CHANGE COLUMN `rating` `driver_rating` VARCHAR(3) NULL DEFAULT NULL ;
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
 
 
 ## ***Stored Procedure***
