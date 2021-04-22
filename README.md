@@ -67,6 +67,10 @@ CREATE TABLE `Campus_Eats_Fall2020`.`restaurant_rating` (
     ON DELETE CASCADE
     ON UPDATE CASCADE);
 
+ALTER TABLE `Campus_Eats_Fall2020`.`restaurant` 
+ADD COLUMN `comments` TEXT(100) NULL AFTER `restaurant_rating`;
+
+
 **Adding the restaurant_rating attribute to the restaurant table**
 
 ALTER TABLE `Campus_Eats_Fall2020`.`restaurant` 
