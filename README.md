@@ -20,6 +20,29 @@ b.	All delivery personnel are students.
 <img width="690" alt="EERD Diagram CE" src="https://user-images.githubusercontent.com/81598050/115477165-53dbf580-a211-11eb-9c58-4785f0352e07.png">
 
 ## ***MySQL Queries***
+**Creating the driver rating table**:
+CREATE TABLE `Campus_Eats_Fall2020`.`driver_rating` (
+  `rating_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `order_id` INT(11) NULL,
+  `driver_id` INT(11) NULL,
+  `person_id` INT(11) NULL,
+  `overall_satisfaction_rating` INT(1) NULL,
+  `delivery_time` DATETIME NULL,
+  `driver_rating` VARCHAR(3) NULL,
+  `comments` TEXT(100) NULL,
+  PRIMARY KEY (`rating_id`),
+  INDEX `driver_id_idx` (`driver_id` ASC) VISIBLE,
+  INDEX `order_id_idx` (`order_id` ASC) VISIBLE,
+  CONSTRAINT `driver_id`
+    FOREIGN KEY (`driver_id`)
+    REFERENCES `Campus_Eats_Fall2020`.`driver` (`driver_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `order_id`
+    FOREIGN KEY (`order_id`)
+    REFERENCES `Campus_Eats_Fall2020`.`order` (`order_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
 
 ## ***Stored Procedure***
 
