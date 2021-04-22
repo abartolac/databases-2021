@@ -43,6 +43,11 @@ CREATE TABLE `Campus_Eats_Fall2020`.`driver_rating` (
     REFERENCES `Campus_Eats_Fall2020`.`order` (`order_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
+    
+**Adding the driver_rating attribute to the driver table:**
+ALTER TABLE `Campus_Eats_Fall2020`.`driver` 
+CHANGE COLUMN `rating` `driver_rating` VARCHAR(3) NULL DEFAULT NULL ;
+
 
 ## ***Stored Procedure***
 
