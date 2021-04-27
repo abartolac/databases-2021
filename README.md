@@ -17,65 +17,12 @@ b.	All delivery personnel are students.
 6)	The rating system will be a five-star rating system that is required after receiving an order. It is a two-part system: rating the delivery driver and rating the restaurant. Each rating will be linked to only one food order. There is a minimum of zero and a maximum of one rating per order. 
 
 ## ***EERD (full database)***
-<img width="816" alt="CE EERD" src="https://user-images.githubusercontent.com/81598050/115796415-ce3a8000-a39f-11eb-885c-286a77e8ba7c.png">
+<img width="867" alt="Organized Campus Eats Diagram" src="https://user-images.githubusercontent.com/81598050/116302958-cbf56e80-a76f-11eb-8c05-ddcf704215de.png">
+
 
 
 ## ***MySQL Queries***
-**Creating the driver rating table**:
 
-CREATE TABLE `Campus_Eats_Fall2020`.`driver_rating` (
-  `driver_rating_id` INT(11) NOT NULL AUTO_INCREMENT,
-  `driver_id` INT(11) NULL,
-  `person_id` INT(11) NULL,
-  `overall_satisfaction_rating` INT(1) NULL,
-  `delivery_time` DATETIME NULL,
-  `driver_rating` VARCHAR(3) NULL,
-  `comments` TEXT(100) NULL,
-  PRIMARY KEY (`rating_id`),
-  INDEX `driver_id_idx` (`driver_id` ASC) VISIBLE,
-  CONSTRAINT `driver_id`
-    FOREIGN KEY (`driver_id`)
-    REFERENCES `Campus_Eats_Fall2020`.`driver` (`driver_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION;
-    
-**Adding the driver_rating attribute to the driver table:**
-
-ALTER TABLE `Campus_Eats_Fall2020`.`driver` 
-CHANGE COLUMN `rating` `driver_rating` VARCHAR(3) NULL DEFAULT NULL ;
-
-**Creating the restaurant rating table:**
-
-CREATE TABLE `Campus_Eats_Fall2020`.`restaurant_rating` (
-  `restaurant_rating_id` INT NOT NULL AUTO_INCREMENT,
-  `order_id` INT(11) NOT NULL,
-  `restaurant_id` INT(11) NOT NULL,
-  `ease_of_ordering` INT(1) NULL,
-  `food_quality` INT(1) NULL,
-  `overall_satisfaction_rating` INT(1) NULL,
-  `restaurant_rating` VARCHAR(3) NULL,
-  PRIMARY KEY (`restaurant_rating_id`),
-  INDEX `restaurant_id_idx` (`restaurant_id` ASC) VISIBLE,
-  INDEX `order_id_idx` (`order_id` ASC) VISIBLE,
-  CONSTRAINT `restaurant_id`
-    FOREIGN KEY (`restaurant_id`)
-    REFERENCES `Campus_Eats_Fall2020`.`restaurant` (`restaurant_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `order_id`
-    FOREIGN KEY (`order_id`)
-    REFERENCES `Campus_Eats_Fall2020`.`order` (`order_id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE);
-
-ALTER TABLE `Campus_Eats_Fall2020`.`restaurant_rating` 
-ADD COLUMN `comments` TEXT(100) NULL AFTER `restaurant_rating`;
-
-
-**Adding the restaurant_rating attribute to the restaurant table**
-
-ALTER TABLE `Campus_Eats_Fall2020`.`restaurant` 
-ADD COLUMN `restaurant_rating` VARCHAR(3) NULL AFTER `website`;
 ## ***Stored Procedure***
 
 ## ***Web/App Implementation/Description of Future Work***
