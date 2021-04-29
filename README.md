@@ -27,6 +27,10 @@ b.	All delivery personnel are students.
 
 ## ***Web/App Implementation/Description of Future Work***
 
+As described in our project, this database design is an enhancement to delivery systems on college campuses. Our improvement on the system comes in the form of the web and as an application as well. This system would be similar to those college campuses use, which allows it to be accessed by preference with a person’s campus logins and passwords. Creating a system like this serves two purposes, the first being a centralizing measure that allows for easy access across campus, and second, allowing restaurants and students to access information such as the menus and directions to delivery locations.
+On the site/application, restaurant menus would be linked in and it would make access much easier for people to order food. The information included here would also be the estimated time of delivery, hours for the restaurant, and any other information provided by the restaurants such as the contact information.
+This application would have options and prompts that allow students and faculty to register and get what they want to be delivered. During the delivery time, students and faculty would be provided with information on their delivery driver and details of the car so that they know when and what to expect. Further, once the food is delivered and confirmation is received, the recipients would be prompted to rate the experience and the delivery which would serve to improve the system and keep it running well. 
+
 ## ***MySQL dump***
 
 ## ***PPT Video***
