@@ -22,7 +22,7 @@ b.	All delivery personnel are students.
 
 
 ## ***MySQL Queries***
-a) display an average rating from the ratings table where restaurantid = 1
+a) **display an average rating from the ratings table where restaurantid = 1**
 
 SELECT avg(overall_rating)
 
@@ -34,11 +34,11 @@ AND orders.restaurant_id = 1;
 
 <img width="124" alt="Screen Shot 2021-04-29 at 10 15 05 AM" src="https://user-images.githubusercontent.com/81598050/116565619-08da7600-a8d4-11eb-9a96-a4a70270e2eb.png">
 
-b) display an average rating from the restaurant table where restaurantid = 1
+b) **display an average rating from the restaurant table where restaurantid = 1**
 
-c) display all average rating from the drivers table where restaurantid = 1
+c) **display all average rating from the drivers table where restaurantid = 1**
 
-d) display all of the orders made by a customer over a week
+d) **display all of the orders made by a customer over a week**
 
 SELECT *
 
