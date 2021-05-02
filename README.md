@@ -1,10 +1,10 @@
 # Campus Food Delivery System
 ## ***Introduction***
-
 Hello everyone! This is a project that features enhancements to a food delivery system for college campuses. The main enhancement will be the addition of a rating system for delivery drivers and customers. The rating system will be a five-star rating system in which customers can express their happiness, disappointment, etc. of their devliery experience. They will rate both the delivery driver and the restaurant. Sometimes, the delivery driver is not at fault for a bad experience, so the separation between delivery driver and restaurant rating is important. This system also allows the database to compare ratings across multiple deliveries for a specific delivery driver. If there are many negative reviews about one driver, the campus controllers can look into the negative experiences and take further action as needed. The rating system overall enhances the effectiveness of the delivery system.
 This project was created by Ashley Bartolac, Ethan Bemis, and Jai Hall.
 
 ## ***Use Case for Rating System***
+A rating system is added to an existing "Campus Eats" restaurant delivery database for campus members.  Individuals using the new rating system are an administrator, driver, casual users and restaurants.  Administrators monitor the records in the ratings system and print reports. Drivers and restaurants can view their individual ratings. Casual users (on campus) can view all ratings.
 
 ## ***Business Rules***
 1)	Persons (campus faculty, staff, students) have accounts in the system with personid (PK), name, email, cell, etc.  For faculty we also keep title, highest degree, and degreecollege.  For staff we keep Position and AdminYorN.  For students we keep GradYear and major plus type (undergraduate, graduate).  Only faculty, staff and students are included.
@@ -18,8 +18,6 @@ b.	All delivery personnel are students.
 
 ## ***EERD (full database)***
 <img width="867" alt="Organized Campus Eats Diagram" src="https://user-images.githubusercontent.com/81598050/116302958-cbf56e80-a76f-11eb-8c05-ddcf704215de.png">
-
-
 
 ## ***MySQL Queries***
 a) **display an average rating from the ratings table where restaurantid = 1**
@@ -36,7 +34,30 @@ AND orders.restaurant_id = 1;
 
 b) **display an average rating from the restaurant table where restaurantid = 1**
 
+SELECT avg((food+price)/2)
+
+FROM restaurant_rating, ratings, orders
+
+WHERE ratings.order_id = orders.order_id
+
+AND orders.restaurant_id = 1;
+
+<img width="143" alt="restaurant rating" src="https://user-images.githubusercontent.com/81598050/116800262-96cd8100-aacd-11eb-9a35-32bca6ed11b4.png">
+
 c) **display all average rating from the drivers table where restaurantid = 1**
+
+SELECT avg((courteous+on_time)/2)
+
+FROM driver_rating, ratings, orders
+
+WHERE ratings.order_id = orders.order_id
+
+AND orders.restaurant_id = 1;
+
+<img width="223" alt="driver rating" src="https://user-images.githubusercontent.com/81598050/116800283-b9f83080-aacd-11eb-97ed-beba7931cdbb.png">
+
+![image](https://user-images.githubusercontent.com/81598050/116800270-a6e56080-aacd-11eb-9bf7-3aa1d2ca511a.png)
+
 
 d) **display all of the orders made by a customer over a week**
 
@@ -52,8 +73,7 @@ AND delivery_time BETWEEN  '2004-04-15 12:00:00' AND '2004-04-22 12:00:00';
 
 <img width="889" alt="Screen Shot 2021-04-29 at 7 49 09 PM" src="https://user-images.githubusercontent.com/81598050/116631956-00aa2700-a924-11eb-8ae9-8b255fa1f72f.png">
 
-
-## ***Stored Procedure***
+e) 
 
 ## ***Web/App Implementation/Description of Future Work***
 
