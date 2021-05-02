@@ -56,9 +56,6 @@ AND orders.restaurant_id = 1;
 
 <img width="223" alt="driver rating" src="https://user-images.githubusercontent.com/81598050/116800283-b9f83080-aacd-11eb-97ed-beba7931cdbb.png">
 
-![image](https://user-images.githubusercontent.com/81598050/116800270-a6e56080-aacd-11eb-9bf7-3aa1d2ca511a.png)
-
-
 d) **display all of the orders made by a customer over a week**
 
 SELECT *
@@ -73,7 +70,7 @@ AND delivery_time BETWEEN  '2004-04-15 12:00:00' AND '2004-04-22 12:00:00';
 
 <img width="889" alt="Screen Shot 2021-04-29 at 7 49 09 PM" src="https://user-images.githubusercontent.com/81598050/116631956-00aa2700-a924-11eb-8ae9-8b255fa1f72f.png">
 
-e) 
+e) **a custom query**
 
 ## ***Web/App Implementation/Description of Future Work***
 
