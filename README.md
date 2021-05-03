@@ -72,6 +72,22 @@ AND delivery_time BETWEEN  '2004-04-15 12:00:00' AND '2004-04-22 12:00:00';
 
 e) **a custom query**
 
+SELECT DISTINCT person_name, AVG(total_price), orders.restaurant_id
+
+FROM person, orders, restaurant, ratings, driver_rating, restaurant_rating
+
+WHERE orders.restaurant_id = restaurant.restaurant_id
+
+AND ratings.rating_id=driver_rating.rating_id
+
+AND ratings.rating_id=restaurant_rating.rating_id
+
+AND person_name= 'Keith Turner'
+
+GROUP BY orders.restaurant_id;
+
+<img width="282" alt="Screen Shot 2021-05-02 at 8 58 30 PM" src="https://user-images.githubusercontent.com/81598050/116833794-31d76100-ab89-11eb-9ca4-3167a4a37d75.png">
+
 ## ***Web/App Implementation/Description of Future Work***
 
 As described in our project, this database design is an enhancement to delivery systems on college campuses. Our improvement on the system comes in the form of the web and as an application as well. This system would be similar to those college campuses use, which allows it to be accessed by preference with a person’s campus logins and passwords. Creating a system like this serves two purposes, the first being a centralizing measure that allows for easy access across campus, and second, allowing restaurants and students to access information such as the menus and directions to delivery locations.
