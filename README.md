@@ -554,3 +554,5 @@ DELIMITER ;
 
 
 ## ***PPT Video***
+Please click on the following link to view a recorded powerpoint presentation about the project.
+https://drive.google.com/file/d/1b0IPRoaPkw-fgIgZQP9Zng6PcyKQ-YJ4/view?usp=sharing
